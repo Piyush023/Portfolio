@@ -22,6 +22,13 @@
     "tailwindcss": "^4",
     "eslint": "^9",
     "eslint-config-next": "15.4.1",
-    "@eslint/eslintrc": "^3"
+    "@eslint/eslintrc": "^3",
+    "framer-motion": "^11.15.0",
+    "lucide-react": "^0.475.0",
+    "sonner": "^2.0.3",
+    "@radix-ui/react-slot": "^1.1.2",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "tailwind-merge": "^3.0.2"
   }
 }
