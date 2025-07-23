@@ -14,8 +14,8 @@ export const Navigation: React.FC<NavigationProps> = ({ activeSection }) => {
     { id: 'home', label: 'Home' },
     { id: 'about', label: 'About' },
     { id: 'skills', label: 'Skills' },
-    { id: 'projects', label: 'Projects' },
     { id: 'experience', label: 'Experience' },
+    { id: 'projects', label: 'Projects' },
     { id: 'contact', label: 'Contact' },
   ];
 
@@ -43,7 +43,7 @@ export const Navigation: React.FC<NavigationProps> = ({ activeSection }) => {
               whileTap={{ scale: 0.95 }}
               onClick={() => scrollToSection('home')}
             >
-              <h1 className='tracking-wider'>DEV.PORTFOLIO</h1>
+              <h1 className='tracking-wider'>PIYUSH.PORTFOLIO</h1>
             </motion.div>
 
             {/* Desktop Navigation */}
