@@ -27,13 +27,14 @@ export const HeroSection: React.FC = () => {
     visible: { opacity: 1, y: 0 },
   };
 
-  const name = "Frontend Developer";
-  const subtitle = "Crafting Digital Experiences";
+  const name = 'Hey, There!';
+  const subtitle =
+    'I am Piyush, A Frontend Developer, Crafting Digital Experiences';
 
   return (
-    <div className="min-h-screen flex items-center justify-center relative px-6">
-      <div className="text-center max-w-4xl">
-        <motion.div
+    <div className='min-h-screen flex items-center justify-center relative px-6'>
+      <div className='text-center max-w-4xl'>
+        {/* <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
@@ -42,19 +43,19 @@ export const HeroSection: React.FC = () => {
           <span className="inline-block px-4 py-2 bg-muted/20 rounded-full border border-border/50 backdrop-blur-sm">
             Available for new opportunities
           </span>
-        </motion.div>
+        </motion.div> */}
 
         <motion.h1
-          className="text-4xl md:text-6xl lg:text-7xl mb-6 tracking-tight"
+          className='text-4xl md:text-6xl lg:text-7xl mb-6 tracking-tight'
           variants={titleVariants}
-          initial="hidden"
-          animate="visible"
+          initial='hidden'
+          animate='visible'
         >
           {name.split('').map((letter, index) => (
             <motion.span
               key={index}
               variants={letterVariants}
-              className="inline-block"
+              className='inline-block'
             >
               {letter === ' ' ? '\u00A0' : letter}
             </motion.span>
@@ -62,7 +63,7 @@ export const HeroSection: React.FC = () => {
         </motion.h1>
 
         <motion.p
-          className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-2xl mx-auto"
+          className='text-xl md:text-2xl text-muted-foreground mb-8 max-w-2xl mx-auto'
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 1 }}
@@ -71,48 +72,57 @@ export const HeroSection: React.FC = () => {
         </motion.p>
 
         <motion.p
-          className="text-lg text-muted-foreground mb-12 max-w-3xl mx-auto leading-relaxed"
+          className='text-lg text-muted-foreground mb-12 max-w-3xl mx-auto leading-relaxed'
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 1.2 }}
         >
-          With over 3 years of experience in JavaScript, TypeScript, React.js, Next.js, and React Native, 
-          I create scalable applications and exceptional user experiences.
+          Turning ideas into sleek, scalable digital experiences using
+          JavaScript, TypeScript, and the React ecosystem—powered by 3+ years of
+          real-world development.
         </motion.p>
 
         <motion.div
-          className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16"
+          className='flex flex-col sm:flex-row items-center justify-center gap-4 mb-16'
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 1.4 }}
         >
           <Button
-            size="lg"
-            className="group px-8 py-3"
-            onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
+            size='lg'
+            className='group px-8 py-3'
+            onClick={() =>
+              document
+                .getElementById('projects')
+                ?.scrollIntoView({ behavior: 'smooth' })
+            }
           >
             View My Work
             <motion.span
-              className="ml-2 inline-block"
+              className='ml-2 inline-block'
               whileHover={{ x: 5 }}
-              transition={{ type: "spring", stiffness: 300 }}
+              transition={{ type: 'spring', stiffness: 300 }}
             >
               →
             </motion.span>
           </Button>
-          
+
           <Button
-            variant="outline"
-            size="lg"
-            className="px-8 py-3"
-            onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+            variant='outline'
+            size='lg'
+            className='px-8 py-3'
+            onClick={() =>
+              document
+                .getElementById('contact')
+                ?.scrollIntoView({ behavior: 'smooth' })
+            }
           >
             Get In Touch
           </Button>
         </motion.div>
 
         <motion.div
-          className="flex items-center justify-center gap-6"
+          className='flex items-center justify-center gap-6'
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 1.6 }}
@@ -120,26 +130,30 @@ export const HeroSection: React.FC = () => {
           {[
             { Icon: Github, href: 'https://github.com', label: 'GitHub' },
             { Icon: Linkedin, href: 'https://linkedin.com', label: 'LinkedIn' },
-            { Icon: Mail, href: 'mailto:your.email@example.com', label: 'Email' },
+            {
+              Icon: Mail,
+              href: 'mailto:your.email@example.com',
+              label: 'Email',
+            },
           ].map(({ Icon, href, label }) => (
             <motion.a
               key={label}
               href={href}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="p-3 rounded-full border border-border/50 hover:border-foreground/50 transition-colors"
+              target='_blank'
+              rel='noopener noreferrer'
+              className='p-3 rounded-full border border-border/50 hover:border-foreground/50 transition-colors'
               whileHover={{ scale: 1.1, y: -2 }}
               whileTap={{ scale: 0.95 }}
             >
               <Icon size={20} />
-              <span className="sr-only">{label}</span>
+              <span className='sr-only'>{label}</span>
             </motion.a>
           ))}
         </motion.div>
       </div>
 
       <motion.button
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 p-2 rounded-full border border-border/50 hover:border-foreground/50 transition-colors"
+        className='absolute bottom-8 left-1/2 transform -translate-x-1/2 p-2 rounded-full border border-border/50 hover:border-foreground/50 transition-colors'
         onClick={scrollToAbout}
         animate={{ y: [0, 10, 0] }}
         transition={{ duration: 2, repeat: Infinity }}

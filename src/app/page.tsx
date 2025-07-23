@@ -14,6 +14,7 @@ import { LoadingScreen } from './components/LoadingScreen';
 export default function App() {
   const [isLoading, setIsLoading] = useState(true);
   const [activeSection, setActiveSection] = useState('home');
+  const [color, setColor] = useState('');
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -54,8 +55,23 @@ export default function App() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  useEffect(() => {
+    setInterval(() => {
+      const randomColor =
+        '#' + Math.floor(Math.random() * 16777215).toString(16);
+      setColor(randomColor);
+    }, 1500);
+  }, []);
+
   return (
-    <div className='dark min-h-screen bg-background text-foreground overflow-x-hidden'>
+    <div
+      className='min-h-screen text-foreground overflow-x-hidden'
+      style={
+        {
+          // background: `linear-gradient(to bottom, ${color}, ${color})`,
+        }
+      }
+    >
       <AnimatePresence>{isLoading && <LoadingScreen />}</AnimatePresence>
 
       {!isLoading && (
@@ -76,12 +92,12 @@ export default function App() {
               <SkillsSection />
             </section>
 
-            <section id='projects'>
-              <ProjectsSection />
-            </section>
-
             <section id='experience'>
               <ExperienceSection />
+            </section>
+
+            <section id='projects'>
+              <ProjectsSection />
             </section>
 
             <section id='contact'>

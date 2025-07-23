@@ -1,5 +1,5 @@
 'use client';
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 
 export const ParticleBackground: React.FC = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -11,6 +11,7 @@ export const ParticleBackground: React.FC = () => {
     const ctx = canvas.getContext('2d');
     if (!ctx) return;
 
+    // Set canvas size to window size
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
 
@@ -24,7 +25,7 @@ export const ParticleBackground: React.FC = () => {
     }> = [];
 
     // Create particles
-    for (let i = 0; i < 50; i++) {
+    for (let i = 0; i < 100; i++) {
       particles.push({
         x: Math.random() * canvas.width,
         y: Math.random() * canvas.height,
@@ -52,7 +53,9 @@ export const ParticleBackground: React.FC = () => {
         // Draw particle
         ctx.beginPath();
         ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(255, 255, 255, ${particle.opacity})`;
+        ctx.fillStyle = `rgba(${Math.floor(Math.random() * 255)},${Math.floor(
+          Math.random() * 255
+        )},${Math.floor(Math.random() * 255)}, 1)`;
         ctx.fill();
 
         // Draw connections
@@ -65,9 +68,11 @@ export const ParticleBackground: React.FC = () => {
             ctx.beginPath();
             ctx.moveTo(particle.x, particle.y);
             ctx.lineTo(otherParticle.x, otherParticle.y);
-            ctx.strokeStyle = `rgba(255, 255, 255, ${
-              0.1 * (1 - distance / 100)
-            })`;
+            ctx.strokeStyle = `rgba(${Math.floor(
+              Math.random() * 255
+            )},${Math.floor(Math.random() * 255)},${Math.floor(
+              Math.random() * 255
+            )}, ${0.5 * (1 - distance / 100)})`;
             ctx.lineWidth = 0.5;
             ctx.stroke();
           }
@@ -94,7 +99,11 @@ export const ParticleBackground: React.FC = () => {
   return (
     <canvas
       ref={canvasRef}
-      className='fixed inset-0 z-0 pointer-events-none opacity-30'
+      className='fixed inset-0 z-0 pointer-events-none opacity-100'
+      style={{
+        width: '100%',
+        height: '100%',
+      }}
     />
   );
 };
