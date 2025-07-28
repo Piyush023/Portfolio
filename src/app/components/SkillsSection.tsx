@@ -244,7 +244,7 @@ export const SkillsSection: React.FC = () => {
           whileInView='visible'
           viewport={{ once: true, margin: '-100px' }}
         >
-          {skillCategories.map((category, categoryIndex) => (
+          {skillCategories.map((category) => (
             <motion.div
               key={category.title}
               className='space-y-4'
