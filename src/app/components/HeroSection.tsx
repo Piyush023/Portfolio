@@ -29,7 +29,7 @@ export const HeroSection: React.FC = () => {
 
   const name = 'Hey, There!';
   const subtitle =
-    'I am Piyush, Full Stack Developer, Crafting Digital Experiences';
+    'I am Piyush, Full Stack Developer, Crafting Digital Experience';
 
   return (
     <div className='min-h-screen flex items-center justify-center relative px-6'>
