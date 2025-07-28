@@ -14,7 +14,6 @@ import { LoadingScreen } from './components/LoadingScreen';
 export default function App() {
   const [isLoading, setIsLoading] = useState(true);
   const [activeSection, setActiveSection] = useState('home');
-  const [color, setColor] = useState('');
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -53,14 +52,6 @@ export default function App() {
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  useEffect(() => {
-    setInterval(() => {
-      const randomColor =
-        '#' + Math.floor(Math.random() * 16777215).toString(16);
-      setColor(randomColor);
-    }, 1500);
   }, []);
 
   return (

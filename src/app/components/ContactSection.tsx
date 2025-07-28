@@ -39,7 +39,7 @@ export const ContactSection: React.FC = () => {
     // Simulate form submission
     await new Promise((resolve) => setTimeout(resolve, 2000));
 
-    toast.success("Message sent successfully! I'll get back to you soon.");
+    toast.success('Message sent successfully! I&apos;ll get back to you soon.');
     setFormData({ name: '', email: '', subject: '', message: '' });
     setIsSubmitting(false);
   };
@@ -112,11 +112,13 @@ export const ContactSection: React.FC = () => {
           transition={{ duration: 0.8 }}
           viewport={{ once: true, margin: '-100px' }}
         >
-          <h2 className='text-3xl md:text-4xl mb-6'>Let's Work Together</h2>
+          <h2 className='text-3xl md:text-4xl mb-6'>
+            Let&apos;s Work Together
+          </h2>
           <div className='w-16 h-1 bg-foreground mx-auto mb-8'></div>
           <p className='text-muted-foreground max-w-2xl mx-auto'>
-            Have a project in mind or want to discuss opportunities? I'd love to
-            hear from you. Let's create something amazing together.
+            Have a project in mind or want to discuss opportunities? I&apos;d
+            love to hear from you. Let&apos;s create something amazing together.
           </p>
         </motion.div>
 
