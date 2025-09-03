@@ -48,19 +48,19 @@ export const ContactSection: React.FC = () => {
     {
       icon: Mail,
       label: 'Email',
-      value: 'your.email@example.com',
-      href: 'mailto:your.email@example.com',
+      value: 'piyushkhurana23@gmail.com',
+      href: 'mailto:piyushkhurana23@gmail.com',
     },
     {
       icon: Phone,
       label: 'Phone',
-      value: '+1 (555) 123-4567',
-      href: 'tel:+15551234567',
+      value: '+91 9896881747',
+      href: 'tel:+919896881747',
     },
     {
       icon: MapPin,
       label: 'Location',
-      value: 'San Francisco, CA',
+      value: 'Noida, India',
       href: null,
     },
   ];
@@ -69,13 +69,13 @@ export const ContactSection: React.FC = () => {
     {
       icon: Github,
       label: 'GitHub',
-      href: 'https://github.com/username',
+      href: 'https://github.com/piyush023',
       color: 'hover:text-gray-400',
     },
     {
       icon: Linkedin,
       label: 'LinkedIn',
-      href: 'https://linkedin.com/in/username',
+      href: 'https://www.linkedin.com/in/piyush-khurana-98338b167/',
       color: 'hover:text-blue-400',
     },
     {
@@ -230,8 +230,8 @@ export const ContactSection: React.FC = () => {
 
           {/* Contact Information */}
           <motion.div variants={itemVariants} className='space-y-8'>
-            <Card className='p-8 border-border/50'>
-              <h3 className='text-2xl mb-6'>Get in Touch</h3>
+            <Card className='p-8 border-border/50 flex-row'>
+              <h3 className='text-2xl mb-6'>Get in Touch & Follow Me</h3>
               <div className='space-y-6'>
                 {contactInfo.map((info) => (
                   <motion.div
@@ -259,11 +259,7 @@ export const ContactSection: React.FC = () => {
                   </motion.div>
                 ))}
               </div>
-            </Card>
-
-            <Card className='p-8 border-border/50'>
-              <h3 className='text-2xl mb-6'>Follow Me</h3>
-              <div className='flex space-x-4'>
+              <div className='flex space-y-6 flex-col'>
                 {socialLinks.map((social) => (
                   <motion.a
                     key={social.label}
@@ -281,7 +277,7 @@ export const ContactSection: React.FC = () => {
               </div>
             </Card>
 
-            <motion.div
+            {/* <motion.div
               className='p-8 rounded-2xl bg-gradient-to-br from-muted/20 to-muted/5 border border-border/50'
               whileHover={{ scale: 1.02 }}
               transition={{ type: 'spring', stiffness: 300 }}
@@ -295,7 +291,7 @@ export const ContactSection: React.FC = () => {
                 <div className='w-2 h-2 rounded-full bg-green-500'></div>
                 <span>Usually responds within a few hours</span>
               </div>
-            </motion.div>
+            </motion.div> */}
           </motion.div>
         </motion.div>
       </div>

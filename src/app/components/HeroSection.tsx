@@ -78,8 +78,8 @@ export const HeroSection: React.FC = () => {
           transition={{ duration: 0.8, delay: 1.2 }}
         >
           Turning ideas into sleek, scalable digital experiences using
-          JavaScript, TypeScript, and the React ecosystem—powered by 3+ years of
-          real-world development.
+          JavaScript, TypeScript, and the React and Node ecosystem—powered by 3+
+          years of real-world development.
         </motion.p>
 
         <motion.div
@@ -128,11 +128,19 @@ export const HeroSection: React.FC = () => {
           transition={{ duration: 0.8, delay: 1.6 }}
         >
           {[
-            { Icon: Github, href: 'https://github.com', label: 'GitHub' },
-            { Icon: Linkedin, href: 'https://linkedin.com', label: 'LinkedIn' },
+            {
+              Icon: Github,
+              href: 'https://github.com/piyush023',
+              label: 'GitHub',
+            },
+            {
+              Icon: Linkedin,
+              href: 'https://www.linkedin.com/in/piyush-khurana-98338b167/',
+              label: 'LinkedIn',
+            },
             {
               Icon: Mail,
-              href: 'mailto:your.email@example.com',
+              href: 'mailto:piyushkhurana23@gmail.com',
               label: 'Email',
             },
           ].map(({ Icon, href, label }) => (
