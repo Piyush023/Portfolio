@@ -1,15 +1,7 @@
 'use client';
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import {
-  Send,
-  Mail,
-  MapPin,
-  Phone,
-  Github,
-  Linkedin,
-  Twitter,
-} from 'lucide-react';
+import { Send, Mail, Phone, Github, Linkedin } from 'lucide-react';
 import { Button } from './ui/button';
 import { Input } from './ui/input';
 import { Textarea } from './ui/textarea';
@@ -58,33 +50,33 @@ export const ContactSection: React.FC = () => {
       href: 'tel:+919896881747',
     },
     {
-      icon: MapPin,
-      label: 'Location',
-      value: 'Noida, India',
-      href: null,
-    },
-  ];
-
-  const socialLinks = [
-    {
       icon: Github,
       label: 'GitHub',
+      value: 'Piyush',
       href: 'https://github.com/piyush023',
-      color: 'hover:text-gray-400',
     },
     {
       icon: Linkedin,
       label: 'LinkedIn',
+      value: 'Piyush',
       href: 'https://www.linkedin.com/in/piyush-khurana-98338b167/',
-      color: 'hover:text-blue-400',
-    },
-    {
-      icon: Twitter,
-      label: 'Twitter',
-      href: 'https://twitter.com/username',
-      color: 'hover:text-blue-400',
     },
   ];
+
+  // const socialLinks = [
+  //   {
+  //     icon: Linkedin,
+  //     label: 'LinkedIn',
+  //     href: 'https://www.linkedin.com/in/piyush-khurana-98338b167/',
+  //     color: 'hover:text-blue-400',
+  //   },
+  //   {
+  //     icon: Twitter,
+  //     label: 'Twitter',
+  //     href: 'https://twitter.com/username',
+  //     color: 'hover:text-blue-400',
+  //   },
+  // ];
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -132,8 +124,8 @@ export const ContactSection: React.FC = () => {
           {/* Contact Form */}
           <motion.div variants={itemVariants}>
             <Card className='p-8 border-border/50'>
-              <h3 className='text-2xl mb-6'>Send a Message</h3>
-              <form onSubmit={handleSubmit} className='space-y-6'>
+              <h3 className='text-2xl mb-4'>Send a Message</h3>
+              <form onSubmit={handleSubmit} className='space-y-4'>
                 <div className='grid md:grid-cols-2 gap-4'>
                   <motion.div
                     whileFocus={{ scale: 1.02 }}
@@ -230,50 +222,52 @@ export const ContactSection: React.FC = () => {
 
           {/* Contact Information */}
           <motion.div variants={itemVariants} className='space-y-8'>
-            <Card className='p-8 border-border/50 flex-row'>
-              <h3 className='text-2xl mb-6'>Get in Touch & Follow Me</h3>
-              <div className='space-y-6'>
-                {contactInfo.map((info) => (
-                  <motion.div
-                    key={info.label}
-                    className='flex items-center space-x-4 group'
-                    whileHover={{ x: 5 }}
-                    transition={{ type: 'spring', stiffness: 300 }}
-                  >
-                    <div className='flex items-center justify-center w-12 h-12 rounded-xl bg-muted/20 group-hover:bg-muted/30 transition-colors'>
-                      <info.icon size={20} />
-                    </div>
-                    <div>
-                      <p className='text-muted-foreground'>{info.label}</p>
-                      {info.href ? (
-                        <a
-                          href={info.href}
-                          className='hover:text-muted-foreground transition-colors'
-                        >
-                          {info.value}
-                        </a>
-                      ) : (
-                        <p>{info.value}</p>
-                      )}
-                    </div>
-                  </motion.div>
-                ))}
-              </div>
-              <div className='flex space-y-6 flex-col'>
-                {socialLinks.map((social) => (
-                  <motion.a
-                    key={social.label}
-                    href={social.href}
-                    target='_blank'
-                    rel='noopener noreferrer'
-                    className={`flex items-center justify-center w-12 h-12 rounded-xl bg-muted/20 hover:bg-muted/30 transition-colors ${social.color}`}
-                    whileHover={{ scale: 1.1, y: -2 }}
-                    whileTap={{ scale: 0.95 }}
-                  >
-                    <social.icon size={20} />
-                    <span className='sr-only'>{social.label}</span>
-                  </motion.a>
-                ))}
+            <Card className='p-8 border-border/50 flex-col'>
+              <h3 className='text-2xl mb-2'>Get in Touch With Me</h3>
+              <div className='flex flex-row gap-2'>
+                <div className='space-y-3 flex-1'>
+                  {contactInfo.map((info) => (
+                    <motion.div
+                      key={info.label}
+                      className='flex items-center space-x-2 group'
+                      whileHover={{ x: 5 }}
+                      transition={{ type: 'spring', stiffness: 300 }}
+                    >
+                      <div className='flex items-center justify-center w-12 h-12 rounded-xl bg-muted/20 group-hover:bg-muted/30 transition-colors'>
+                        <info.icon size={20} />
+                      </div>
+                      <div>
+                        <p className='text-muted-foreground'>{info.label}</p>
+                        {info.href ? (
+                          <a
+                            href={info.href}
+                            className='hover:text-muted-foreground transition-colors'
+                          >
+                            {info.value}
+                          </a>
+                        ) : (
+                          <p>{info.value}</p>
+                        )}
+                      </div>
+                    </motion.div>
+                  ))}
+                </div>
+                {/* <div className='flex space-y-6 flex-col'>
+                  {socialLinks.map((social) => (
+                    <motion.a
+                      key={social.label}
+                      href={social.href}
+                      target='_blank'
+                      rel='noopener noreferrer'
+                      className={`flex items-center justify-center w-12 h-12 rounded-xl bg-muted/20 hover:bg-muted/30 transition-colors ${social.color}`}
+                      whileHover={{ scale: 1.1, y: -2 }}
+                      whileTap={{ scale: 0.95 }}
+                    >
+                      <social.icon size={20} />
+                      <span className='sr-only'>{social.label}</span>
+                    </motion.a>
+                  ))}
+                </div> */}
               </div>
             </Card>
 
