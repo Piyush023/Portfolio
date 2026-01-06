@@ -8,16 +8,21 @@ WORKDIR /app
 COPY package*.json ./
 
 # Install the dependencies
-RUN npm install
+RUN npm ci --only=production=false
 
 # Copy the rest of the application code
-COPY . .
+# Using COPY with --chown to ensure proper permissions
+COPY --chown=node:node . .
 
 # Build the application with ESLint warnings as warnings, not errors
-RUN npm run build
+# Clear Next.js cache before building to ensure fresh build
+RUN rm -rf .next && npm run build
 
 # Expose the application port
 EXPOSE 3000
+
+# Switch to non-root user for security
+USER node
 
 # Start the application in production mode
 CMD ["npm", "start"]
