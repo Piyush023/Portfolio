@@ -18,11 +18,9 @@ export const ExperienceSection: React.FC = () => {
         `Developed full-stack AI companion mobile app with comprehensive backend infrastructure including secure user authentication,
 in-app purchase integration, and real-time voice chat functionality using AI bot technology, generating 200K revenue within first
 month of launch`,
-        `Led end-to-end development of full-stack web for AI-powered music and video generation, implementing robust user authenti-
-cation systems, database architecture, scaling upto 100K users`,
+        `Led end-to-end development of full-stack web for AI-powered music and video generation, implementing robust user authentication systems, database architecture, scaling upto 100K users`,
         `Architected comprehensive codebase modernization by implementing Redux state management and responsive UI/UX design
-patterns with Material-UI framework, reducing technical debt by 40%, improving code maintainability, and significantly enhanc-
-ing user experience metrics and engagement rate`,
+patterns with Material-UI framework, reducing technical debt by 40%, improving code maintainability, and significantly enhancing user experience metrics and engagement rate`,
       ],
       technologies: [
         'React',
