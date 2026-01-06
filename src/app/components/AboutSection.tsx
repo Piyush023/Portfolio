@@ -21,7 +21,7 @@ export const AboutSection: React.FC = () => {
       icon: Zap,
       title: 'Performance',
       description:
-        'Optimizing applications for speed, efficiency, and seamless user interactions.',
+        'Optimizing application for speed, efficiency, and seamless user interactions.',
     },
     {
       icon: Users,
