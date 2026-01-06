@@ -7,6 +7,11 @@ steps:
     args:
       - 'build'
       - '--no-cache'  # Force fresh build to avoid cache issues
+      - '--pull'  # Always pull latest base image
+      - '--build-arg'
+      - 'BUILD_DATE=$(date -u +"%Y-%m-%dT%H:%M:%SZ")'
+      - '--build-arg'
+      - 'VCS_REF=$COMMIT_SHA'
       - '-t'
       - 'gcr.io/$PROJECT_ID/portfolio:$COMMIT_SHA'
       - '-t'
