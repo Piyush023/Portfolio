@@ -11,29 +11,17 @@ export const HeroSection: React.FC = () => {
     }
   };
 
-  const titleVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.08,
-        delayChildren: 0.2,
-      },
-    },
-  };
-
-  const letterVariants = {
-    hidden: { opacity: 0, y: 50 },
-    visible: { opacity: 1, y: 0 },
-  };
-
-  const name = 'Hey, There!';
+  const title =
+    'Crafting Scalable, Beautiful, and Performant Digital Experiences';
   const subtitle =
-    'I am Piyush, Full Stack Developer, Crafting Digital Experiences';
+    'Frontend Engineer specializing in React, Next.js & React Native — turning ideas into high-impact products.';
 
   return (
-    <div className='min-h-screen flex items-center justify-center relative px-6'>
-      <div className='text-center max-w-4xl'>
+    <div className='min-h-screen flex items-center justify-center relative px-4 sm:px-6'>
+      {/* Diagonal gradient overlay */}
+      <div className='pointer-events-none absolute inset-0 -z-10 bg-gradient-to-br from-background via-background/80 to-foreground/10' />
+
+      <div className='text-center max-w-4xl mx-auto py-24 sm:py-32'>
         {/* <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -46,24 +34,16 @@ export const HeroSection: React.FC = () => {
         </motion.div> */}
 
         <motion.h1
-          className='text-4xl md:text-6xl lg:text-7xl mb-6 tracking-tight'
-          variants={titleVariants}
-          initial='hidden'
-          animate='visible'
+          className='text-4xl sm:text-5xl lg:text-6xl mb-6 tracking-tight'
+          initial={{ opacity: 0, y: 24 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
         >
-          {name.split('').map((letter, index) => (
-            <motion.span
-              key={index}
-              variants={letterVariants}
-              className='inline-block'
-            >
-              {letter === ' ' ? '\u00A0' : letter}
-            </motion.span>
-          ))}
+          {title}
         </motion.h1>
 
         <motion.p
-          className='text-xl md:text-2xl text-muted-foreground mb-8 max-w-2xl mx-auto'
+          className='text-lg md:text-2xl text-muted-foreground mb-6 md:mb-8 max-w-2xl mx-auto'
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 1 }}
@@ -77,9 +57,9 @@ export const HeroSection: React.FC = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 1.2 }}
         >
-          Turning ideas into sleek, scalable digital experiences using
-          JavaScript, TypeScript, and the React and Node ecosystem—powered by 3+
-          years of real-world development.
+          Turning product vision into pixel-perfect, performant code using
+          JavaScript, TypeScript, and the React ecosystem \u2014 backed by 3+ years
+          of building production-grade web and mobile experiences.
         </motion.p>
 
         <motion.div
@@ -90,14 +70,14 @@ export const HeroSection: React.FC = () => {
         >
           <Button
             size='lg'
-            className='group px-8 py-3'
+            className='group px-8 py-3 w-full sm:w-auto'
             onClick={() =>
               document
                 .getElementById('projects')
                 ?.scrollIntoView({ behavior: 'smooth' })
             }
           >
-            View My Work
+            Explore Projects
             <motion.span
               className='ml-2 inline-block'
               whileHover={{ x: 5 }}
@@ -110,14 +90,14 @@ export const HeroSection: React.FC = () => {
           <Button
             variant='outline'
             size='lg'
-            className='px-8 py-3'
+            className='px-8 py-3 w-full sm:w-auto'
             onClick={() =>
               document
                 .getElementById('contact')
                 ?.scrollIntoView({ behavior: 'smooth' })
             }
           >
-            Get In Touch
+            Let&apos;s Connect
           </Button>
         </motion.div>
 
@@ -140,7 +120,7 @@ export const HeroSection: React.FC = () => {
             },
             {
               Icon: Mail,
-              href: 'mailto:piyushkhurana23@gmail.com',
+              href: 'mailto:piyushkhurana.dev@gmail.com',
               label: 'Email',
             },
           ].map(({ Icon, href, label }) => (

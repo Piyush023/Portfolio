@@ -348,14 +348,15 @@ export const SkillsSection: React.FC = () => {
           </h3>
           <div className='flex flex-wrap items-center justify-center gap-4'>
             {[
-              'Vue.js',
-              'Svelte',
-              'Three.js',
-              'WebGL',
-              'Rust',
+              'Python',
+              'Java',
+              'Spring Boot',
               'Go',
               'Docker',
               'Kubernetes',
+              'SQL',
+              'MongoDB',
+              'Redis',
             ].map((tech, index) => (
               <motion.div
                 key={tech}

@@ -21,7 +21,7 @@ export const AboutSection: React.FC = () => {
       icon: Zap,
       title: 'Performance',
       description:
-        'Optimizing applications for speed, efficiency, and seamless user interactions.',
+        'Optimizing application for speed, efficiency, and seamless user interactions.',
     },
     {
       icon: Users,
@@ -57,11 +57,14 @@ export const AboutSection: React.FC = () => {
           transition={{ duration: 0.8 }}
           viewport={{ once: true, margin: '-100px' }}
         >
-          <h2 className='text-3xl md:text-4xl mb-6'>About Me</h2>
-          <div className='w-16 h-1 bg-foreground mx-auto mb-8'></div>
+          <h2 className='text-3xl md:text-4xl mb-4'>About Me</h2>
+          <div className='w-16 h-1 bg-foreground mx-auto mb-4'></div>
+          <p className='text-muted-foreground max-w-xl mx-auto text-sm md:text-base'>
+            Turning product vision into pixel-perfect, performant code.
+          </p>
         </motion.div>
 
-        <div className='grid lg:grid-cols-2 gap-12 items-center mb-16'>
+        <div className='grid md:grid-cols-2 gap-10 lg:gap-12 items-center mb-16'>
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -69,7 +72,7 @@ export const AboutSection: React.FC = () => {
             viewport={{ once: true, margin: '-100px' }}
           >
             <h3 className='text-2xl mb-6'>Passionate Frontend Developer</h3>
-            <div className='space-y-4 text-muted-foreground'>
+            <div className='space-y-4 text-muted-foreground text-sm md:text-base'>
               <p>
                 Having accumulated over three years of front-end development
                 experience, I specialize in JavaScript, TypeScript, React.js,
