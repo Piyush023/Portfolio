@@ -2,32 +2,34 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Code, Palette, Zap, Users } from 'lucide-react';
 import { Card } from './ui/card';
+import Lottie from 'lottie-react';
+import assetsIndex from '../utils/assetsIndex';
 
 export const AboutSection: React.FC = () => {
   const highlights = [
     {
       icon: Code,
-      title: 'Clean Code',
+      title: 'End-to-End Development',
       description:
-        'Writing maintainable, scalable, and efficient code following best practices.',
+        'Building features across the stack — from frontend architecture and state management to backend APIs and integrations.',
     },
     {
       icon: Palette,
-      title: 'UI/UX Focus',
+      title: 'Product-Focused UI/UX',
       description:
-        'Creating beautiful, intuitive interfaces that provide exceptional user experiences.',
+        'Designing clean, intuitive interfaces with strong attention to usability, accessibility, and real user behavior.',
     },
     {
       icon: Zap,
-      title: 'Performance',
+      title: 'Performance & Scalability',
       description:
-        'Optimizing application for speed, efficiency, and seamless user interactions.',
+        'Optimizing applications for speed, scalability, and reliability across web and mobile platforms.',
     },
     {
       icon: Users,
-      title: 'Collaboration',
+      title: 'Team & Ownership Mindset',
       description:
-        'Working effectively with teams to deliver projects on time and exceed expectations.',
+        'Collaborating closely with product, design, and engineering teams while taking ownership of features from idea to production.',
     },
   ];
 
@@ -58,9 +60,9 @@ export const AboutSection: React.FC = () => {
           viewport={{ once: true, margin: '-100px' }}
         >
           <h2 className='text-3xl md:text-4xl mb-4'>About Me</h2>
-          <div className='w-16 h-1 bg-foreground mx-auto mb-4'></div>
           <p className='text-muted-foreground max-w-xl mx-auto text-sm md:text-base'>
-            Turning product vision into pixel-perfect, performant code.
+            Turning complex product ideas into scalable, user-focused solutions
+            using modern web and mobile technologies.
           </p>
         </motion.div>
 
@@ -71,24 +73,33 @@ export const AboutSection: React.FC = () => {
             transition={{ duration: 0.8 }}
             viewport={{ once: true, margin: '-100px' }}
           >
-            <h3 className='text-2xl mb-6'>Passionate Frontend Developer</h3>
+            <h3 className='text-2xl mb-6'>Frontend-Led Full-Stack Engineer</h3>
             <div className='space-y-4 text-muted-foreground text-sm md:text-base'>
               <p>
-                Having accumulated over three years of front-end development
-                experience, I specialize in JavaScript, TypeScript, React.js,
-                Next.js, and React Native. I believe in creating exceptional
-                digital experiences that make a difference.
+                With over three years of experience building real-world
+                products, I work as a frontend-led full-stack engineer focused
+                on creating scalable, high-performance web and mobile
+                applications. My core expertise lies in JavaScript, TypeScript,
+                React, Next.js, and React Native, complemented by hands-on
+                backend experience using Node.js, Express, REST APIs, and
+                real-time systems.
               </p>
+
               <p>
-                In my past roles, I&apos;ve demonstrated a successful history of
-                creating scalable applications and enhancing user experience. I
-                effectively utilize modern technologies to build responsive user
-                interface components and improve front-end performance.
+                I’ve worked extensively in product-driven startup environments,
+                where I owned features end-to-end — from UI/UX implementation
+                and state management to API integration, performance
+                optimization, and production debugging. I enjoy building systems
+                that are not just functional, but reliable, maintainable, and
+                scalable as user traffic grows.
               </p>
+
               <p>
-                My expertise in API integrations, performance optimization, and
-                state management allows me to contribute significantly to
-                development teams and deliver high-quality solutions.
+                Beyond writing code, I focus on problem-solving, clean
+                architecture, and collaboration with designers, backend
+                engineers, and product teams. I care deeply about performance,
+                developer experience, and delivering features that create
+                measurable business impact.
               </p>
             </div>
           </motion.div>
@@ -101,44 +112,24 @@ export const AboutSection: React.FC = () => {
             viewport={{ once: true, margin: '-100px' }}
           >
             <div className='aspect-square bg-gradient-to-br from-muted/20 to-muted/5 rounded-2xl border border-border/50 flex items-center justify-center'>
-              <motion.div
-                className='text-6xl'
-                animate={{
-                  rotateY: [0, 360],
+              {/* <Lottie
+                animationData={assetsIndex.aboutMeAnimation}
+                loop={true}
+                style={{ width: '100%', height: '100%' }}
+              /> */}
+              <video
+                src='https://assets.artistfirst.in/uploads/1767790506245-tmpczt1icm6_comp.mp4'
+                autoPlay
+                loop
+                muted
+                style={{
+                  width: '100%',
+                  height: '100%',
+                  borderRadius: '16px',
+                  objectFit: 'cover',
                 }}
-                transition={{
-                  duration: 10,
-                  repeat: Infinity,
-                  ease: 'linear',
-                }}
-              >
-                💻
-              </motion.div>
+              />
             </div>
-            <motion.div
-              className='absolute -top-4 -right-4 w-24 h-24 bg-accent rounded-full border-4 border-background'
-              animate={{
-                scale: [1, 1.1, 1],
-                rotate: [0, 180, 360],
-              }}
-              transition={{
-                duration: 8,
-                repeat: Infinity,
-                ease: 'easeInOut',
-              }}
-            />
-            <motion.div
-              className='absolute -bottom-6 -left-6 w-16 h-16 bg-secondary rounded-full border-4 border-background'
-              animate={{
-                y: [0, -20, 0],
-                x: [0, 10, 0],
-              }}
-              transition={{
-                duration: 6,
-                repeat: Infinity,
-                ease: 'easeInOut',
-              }}
-            />
           </motion.div>
         </div>
 
@@ -151,15 +142,19 @@ export const AboutSection: React.FC = () => {
         >
           {highlights.map((highlight) => (
             <motion.div key={highlight.title} variants={itemVariants}>
-              <Card className='p-6 h-full border-border/50 hover:border-foreground/20 transition-colors group'>
+              <Card className='p-3 h-full border-border/50 hover:border-foreground/20 transition-colors group'>
                 <motion.div
-                  className='flex items-center justify-center w-12 h-12 rounded-xl bg-muted/20 mb-4 group-hover:bg-muted/30 transition-colors'
+                  className='flex items-center justify-center w-12 h-12 rounded-xl bg-muted/20 mb-2 group-hover:bg-muted/30 transition-colors'
                   whileHover={{ scale: 1.1, rotate: 5 }}
                 >
-                  <highlight.icon size={24} />
+                  <highlight.icon size={30} />
                 </motion.div>
-                <h4 className='mb-3'>{highlight.title}</h4>
-                <p className='text-muted-foreground'>{highlight.description}</p>
+                <h3 className='text-lg font-semibold text-foreground'>
+                  {highlight.title}
+                </h3>
+                <p className='text-muted-foreground text-sm'>
+                  {highlight.description}
+                </p>
               </Card>
             </motion.div>
           ))}

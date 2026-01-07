@@ -23,9 +23,7 @@ COPY --chown=node:node . .
 # Build the application with ESLint warnings as warnings, not errors
 # Clear Next.js cache and node_modules/.cache before building to ensure fresh build
 RUN rm -rf .next node_modules/.cache && \
-    npm run build && \
-    # Remove dev dependencies to reduce image size
-    npm prune --production
+    npm run build
 
 # Expose the application port
 EXPOSE 3000

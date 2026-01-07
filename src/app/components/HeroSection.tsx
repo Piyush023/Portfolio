@@ -11,10 +11,10 @@ export const HeroSection: React.FC = () => {
     }
   };
 
-  const title =
-    'Crafting Scalable, Beautiful, and Performant Digital Experiences';
+  const title = 'Building Scalable, High-Impact Web & Mobile Products';
+
   const subtitle =
-    'Frontend Engineer specializing in React, Next.js & React Native — turning ideas into high-impact products.';
+    'Full-Stack Engineer (Frontend-led) specializing in React, Next.js, React Native & Node.js.';
 
   return (
     <div className='min-h-screen flex items-center justify-center relative px-4 sm:px-6'>
@@ -57,9 +57,11 @@ export const HeroSection: React.FC = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 1.2 }}
         >
-          Turning product vision into pixel-perfect, performant code using
-          JavaScript, TypeScript, and the React ecosystem \u2014 backed by 3+ years
-          of building production-grade web and mobile experiences.
+          I design and build production-grade web and mobile applications
+          end-to-end — from intuitive user interfaces to scalable backend
+          systems. With 3+ years of experience in fast-paced product startups, I
+          focus on performance, clean architecture, and solving real business
+          problems
         </motion.p>
 
         <motion.div

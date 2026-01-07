@@ -11,8 +11,8 @@ const nextConfig: NextConfig = {
     // your project has type errors.
     ignoreBuildErrors: true,
   },
-  // Disable static optimization to ensure fresh content on each deployment
-  output: 'standalone',
+  // Only use standalone output for production builds (not during development)
+  ...(process.env.NODE_ENV === 'production' && { output: 'standalone' }),
   // Add cache control headers to prevent stale content
   async headers() {
     return [
