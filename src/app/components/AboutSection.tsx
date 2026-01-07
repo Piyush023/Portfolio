@@ -2,8 +2,6 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Code, Palette, Zap, Users } from 'lucide-react';
 import { Card } from './ui/card';
-import Lottie from 'lottie-react';
-import assetsIndex from '../utils/assetsIndex';
 
 export const AboutSection: React.FC = () => {
   const highlights = [

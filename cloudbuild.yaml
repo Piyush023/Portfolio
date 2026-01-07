@@ -16,8 +16,6 @@ steps:
       - 'gcr.io/$PROJECT_ID/portfolio:$COMMIT_SHA'
       - '-t'
       - 'gcr.io/$PROJECT_ID/portfolio:latest'
-      - '-f'
-      - '.dockerfile'
       - '.'
     id: 'build-image'
 
