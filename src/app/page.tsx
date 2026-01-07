@@ -1,4 +1,5 @@
 'use client';
+export const dynamic = 'force-dynamic';
 import React, { useEffect, useState } from 'react';
 import { AnimatePresence } from 'framer-motion';
 import { ParticleBackground } from './components/ParticleBackground';
