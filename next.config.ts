@@ -1,13 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: 'export',
+  // No output: 'export' here
   reactStrictMode: true,
-  images: {
-    unoptimized: true,
-  },
-  // Important for App Router
-  trailingSlash: true,
+  // other configs...
 };
 
-export default nextConfig;
-// Or if using .js: module.exports = nextConfig
+module.exports = nextConfig;
