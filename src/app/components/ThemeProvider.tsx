@@ -10,8 +10,8 @@ interface ThemeProviderProps {
 export function ThemeProvider({ children }: ThemeProviderProps) {
   return (
     <NextThemesProvider
-      attribute="class"
-      defaultTheme="system"
+      attribute='class'
+      defaultTheme='system'
       enableSystem
       disableTransitionOnChange
     >
@@ -19,5 +19,3 @@ export function ThemeProvider({ children }: ThemeProviderProps) {
     </NextThemesProvider>
   );
 }
-
-

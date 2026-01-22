@@ -172,10 +172,10 @@ patterns with Material-UI framework, reducing technical debt by 40%, improving c
                     {index === 0
                       ? '🚀'
                       : index === 1
-                      ? '💻'
-                      : index === 2
-                      ? '⭐'
-                      : '🌱'}
+                        ? '💻'
+                        : index === 2
+                          ? '⭐'
+                          : '🌱'}
                   </span>
                 </motion.div>
 
