@@ -10,10 +10,12 @@ import { ProjectsSection } from './ProjectsSection';
 import { ExperienceSection } from './ExperienceSection';
 import { ContactSection } from './ContactSection';
 import { LoadingScreen } from './LoadingScreen';
+// import { AnimateClick } from './AnimateClick.jsx';
 
 export const HomePage: React.FC = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [activeSection, setActiveSection] = useState('home');
+  const [click, setClick] = useState({ x: 0, y: 0 });
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -54,13 +56,18 @@ export const HomePage: React.FC = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const handleClick = (e: React.MouseEvent<HTMLDivElement>) => {
+    setClick({ x: e.pageX, y: e.pageY });
+  };
+
   return (
     <div className='min-h-screen text-foreground overflow-x-hidden'>
       <AnimatePresence>{isLoading && <LoadingScreen />}</AnimatePresence>
 
       {!isLoading && (
-        <>
+        <div className='relative' onClick={(e) => handleClick(e)}>
           <ParticleBackground />
+          {/* <AnimateClick position={click} /> */}
           <Navigation activeSection={activeSection} />
 
           <main className='relative z-10'>
@@ -88,7 +95,7 @@ export const HomePage: React.FC = () => {
               <ContactSection />
             </section>
           </main>
-        </>
+        </div>
       )}
     </div>
   );

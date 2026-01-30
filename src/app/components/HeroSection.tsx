@@ -19,7 +19,7 @@ export const HeroSection: React.FC = () => {
   return (
     <div className='min-h-screen flex items-center justify-center relative px-4 sm:px-6'>
       {/* Diagonal gradient overlay */}
-      <div className='pointer-events-none absolute inset-0 -z-10 bg-gradient-to-br from-background via-background/80 to-foreground/10' />
+      <div className='absolute inset-0 -z-10' />
 
       <div className='text-center max-w-4xl mx-auto py-24 sm:py-32'>
         {/* <motion.div
@@ -59,7 +59,7 @@ export const HeroSection: React.FC = () => {
         >
           I design and build production-grade web and mobile applications
           end-to-end — from intuitive user interfaces to scalable backend
-          systems. With 3+ years of experience in fast-paced product startups, I
+          systems. With ~4 years of experience in fast-paced product startups, I
           focus on performance, clean architecture, and solving real business
           problems
         </motion.p>
@@ -122,7 +122,7 @@ export const HeroSection: React.FC = () => {
             },
             {
               Icon: Mail,
-              href: 'mailto:piyushkhurana.dev@gmail.com',
+              href: 'mailto:piyushkhurana23@gmail.com',
               label: 'Email',
             },
           ].map(({ Icon, href, label }) => (

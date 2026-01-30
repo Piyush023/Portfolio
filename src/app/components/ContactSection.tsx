@@ -28,8 +28,27 @@ export const ContactSection: React.FC = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 2000));
+    await fetch('https://ccfa2b5d229a.ngrok-free.app/send-email', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(formData),
+    })
+      .then((res) => {
+        console.log(res);
+        return res.json();
+      })
+      .then((data) => {
+        console.log(data);
+        toast.success(
+          'Message sent successfully! I&apos;ll get back to you soon.'
+        );
+      })
+      .catch((err) => {
+        console.log(err);
+        toast.error('Failed to send message. Please try again.');
+      });
 
     toast.success('Message sent successfully! I&apos;ll get back to you soon.');
     setFormData({ name: '', email: '', subject: '', message: '' });
@@ -187,6 +206,7 @@ export const ContactSection: React.FC = () => {
                   whileTap={{ scale: 0.95 }}
                 >
                   <Button
+                    onClick={(e) => handleSubmit(e)}
                     type='submit'
                     size='lg'
                     disabled={isSubmitting}
